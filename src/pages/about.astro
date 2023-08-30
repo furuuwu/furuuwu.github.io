@@ -1,0 +1,148 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const dob = new Date(1993, 3, 25);
+const my_age = age(dob);
+
+function age(dateOfBirth: Date) {
+	const today = new Date();
+	const birthDate = new Date(dateOfBirth);
+	let age = today.getFullYear() - birthDate.getFullYear();
+	const m = today.getMonth() - birthDate.getMonth();
+
+	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+		age--;
+	}
+
+	return age;
+}
+---
+
+<!-- passing the title variable using props -->
+<MainLayout title="About" description="My about page">
+	<section aria-label="About me...">
+		<p class="background-img"></p>
+		<div class="content">
+			<h1 class="h1">Hello!</h1>
+			<p>
+				What? You wanna know stuff about me?
+				<img
+					src="https://cdn3.emoji.gg/emojis/8724-shy-cute.gif"
+					width="64px"
+					height="64px"
+					alt="Shy_cute"
+				/>
+				 Oh gosh... If you really insist...
+			</p>
+			<br />
+			<p>...</p>
+			<br />
+			<p>So, in essense, I'm stupid but also - even worse - I'm poor</p>
+			<br />
+			<a
+				class="money_btn"
+				href="https://paypal.me/fufufufuru"
+				target="_blank"
+				rel="noopener noreferrer">PLS send me money!</a
+			>
+			<div class="money_div"></div>
+		</div>
+	</section>
+</MainLayout>
+
+<style>
+	body {
+		background-image: url("/images/somewhere-here.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+	.content {
+		margin-left: 5%;
+	}
+	.h1 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.money_btn {
+		-webkit-appearance: button;
+		-moz-appearance: button;
+		appearance: button;
+
+		text-decoration: none;
+		color: initial;
+
+		background-color: transparent;
+		font-size: 60px;
+		border-style: solid;
+		border-color: brown;
+		border-radius: 5%;
+		border-width: 5px;
+		cursor: pointer;
+	}
+	.money_div {
+		display: flex;
+		text-align: center;
+		flex-direction: row;
+	}
+	.money_btn:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<script>
+	function getOffset(el: any) {
+		const rect = el.getBoundingClientRect();
+		return {
+			left: rect.left + window.scrollX,
+			top: rect.top + window.scrollY,
+		};
+	}
+
+	let moneybutton = document.getElementsByClassName("money_btn")[0];
+	moneybutton.addEventListener("mouseover", (event) => {
+		createParticle(getOffset(moneybutton).left, getOffset(moneybutton).top);
+		for (var i = 1; i < 6; i++) {
+			createParticle(
+				getOffset(moneybutton).left,
+				getOffset(moneybutton).top,
+			);
+		}
+	});
+
+	function createParticle(x: any, y: any) {
+		// console.log(x, y);
+		const particle = document.createElement("particle");
+		let div = document.getElementsByClassName("money_div")[0];
+		div.appendChild(particle);
+		// document.body.appendChild(particle);
+		let width = Math.floor(Math.random() * 30 + 50);
+		let height = width;
+		// console.log(width, height);
+
+		let delay = Math.random() * 200;
+
+		particle.innerHTML =
+			"<img src='https://cdn3.emoji.gg/emojis/8724-shy-cute.gif'>";
+
+		particle.style.width = `${width}px`;
+		particle.style.height = `${height}px`;
+		const animation = particle.animate(
+			[
+				{
+					transform: `translate(-50%, -50%) translate(${-x}px, ${-y}px) rotate(0deg)`,
+					opacity: 1,
+				},
+			],
+			{
+				duration: Math.random() * 1000 + 1000,
+				easing: "cubic-bezier(0, .8, .8, 1)",
+				delay: delay,
+			},
+		);
+		animation.onfinish = removeParticle;
+	}
+	function removeParticle(e: any) {
+		e.srcElement.effect.target.remove();
+	}
+</script>

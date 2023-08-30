@@ -1,0 +1,26 @@
+---
+import { formatDate } from "../utils";
+import MainLayout from "./MainLayout.astro";
+
+const { title, description, last_updated_date, created_date } = Astro.props
+    .frontmatter as PostProps;
+---
+
+<MainLayout {title} {description}>
+    <div class="content">
+        <h1>{title}</h1>
+        <p>
+            {last_updated_date > created_date ? "updated: " : ""}
+            {formatDate(last_updated_date)}
+        </p>
+        <slot />
+    </div>
+    <div class="sidebar"></div>
+</MainLayout>
+
+<style>
+    .content {
+        margin-left: 5%;
+        height: 100%;
+    }
+</style>

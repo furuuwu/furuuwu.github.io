@@ -1,0 +1,36 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<!-- passing the title variable using props -->
+<MainLayout title="404" description="Not found.">
+    <section class="container">
+        <!--<img src="/images/confused.png" alt="404" />-->
+        <div id="n404">404</div>
+    </section>
+</MainLayout>
+
+<style>
+    body {
+        background-image: url("/images/confused.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        box-shadow: 0 0 8px 8px white inset;
+    }
+    #n404 {
+        text-shadow: 0 0 4px #49028b;
+        font-size: 100px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    /*
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    */
+</style>

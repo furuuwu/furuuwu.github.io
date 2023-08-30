@@ -1,0 +1,95 @@
+---
+import { formatDate } from "../utils";
+const { post } = Astro.props;
+
+const { title, created_date, last_updated_date, image, description, category } =
+    post.frontmatter;
+
+let currTagColor = "";
+switch (category) {
+    case "meta":
+        currTagColor = "#47bcd4"; // teal
+        break;
+    case "tech":
+        currTagColor = "#5e76bf"; // purple. is red better?
+        break;
+    case "science":
+        currTagColor = "#cd5b9f"; // pink
+        break;
+    case "music":
+        currTagColor = "yellow"; // pink
+        break;
+}
+console.log(category, currTagColor);
+// well, not great, probably there's better ways to do it
+---
+
+<div class="card">
+    <div class="card-header">
+        <a href={post.url} target="_blank" rel="noopener noreferrer">
+            <img src={image.src} alt={image.alt} />
+        </a>
+    </div>
+    <div class="card-body">
+        <span class="tag">{category}</span>
+        <h4>
+            {title}
+        </h4>
+        <p>
+            {description}
+            <br />
+            {last_updated_date > created_date ? "updated: " : ""}
+            {formatDate(last_updated_date)}
+        </p>
+    </div>
+</div>
+<!--
+<pre>{JSON.stringify(post.frontmatter, null, 2)}</pre>
+-->
+<style define:vars={{ currTagColor }}>
+    .card {
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        width: 300px;
+        min-width: 160px;
+    }
+    .card-header img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        min-height: 100px;
+        /*
+        min-height: 50px;
+        max-height: 350px;
+        min-width: 160px;
+        flex-wrap: wrap;
+        */
+    }
+
+    .tag {
+        background: #cccccc;
+        border-radius: 50px;
+        font-size: 12px;
+        margin: 0;
+        color: #fff;
+        padding: 2px 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: var(--currTagColor);
+    }
+
+    .card-body p {
+        font-size: 13px;
+        margin: 0 0 40px;
+    }
+</style>

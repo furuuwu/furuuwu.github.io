@@ -1,0 +1,39 @@
+---
+import PostCard from "../../components/PostCard.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { formatBlogPosts } from "../../utils";
+
+const allPosts = await Astro.glob("./*.md");
+
+console.log("all posts", allPosts);
+const formattedPosts = formatBlogPosts(allPosts);
+console.log("formated here");
+console.log(formattedPosts);
+---
+
+<MainLayout title="Blog">
+    <div class="cards">
+        {
+            // formattedPosts
+            allPosts.map((post: any) => <PostCard {post} />)
+        }
+    </div>
+</MainLayout>
+
+<style>
+    .big {
+        font-size: larger;
+        text-decoration: wavy;
+        color: royalblue;
+        text-transform: uppercase;
+    }
+    .intro {
+        margin-left: 5%;
+    }
+    .cards {
+        display: flex;
+        flex-direction: row;
+        margin-left: 5%;
+        flex-wrap: wrap;
+    }
+</style>

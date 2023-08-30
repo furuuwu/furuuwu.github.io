@@ -1,0 +1,32 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Games" description="Games..">
+    <section class="container" aria-label="Games (so fun...)">
+        <img src="/images/construction-worker.png" alt="building..." />
+        <div id="construction">UNDER CONSTRUCTION</div>
+    </section>
+</MainLayout>
+
+<style>
+    /* Container holding the image and the text */
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+        width: 100%;
+    }
+    p {
+        color: #49028b;
+        font-size: 20px;
+    }
+    #construction {
+        text-shadow: 0 0 4px #49028b;
+        font-size: 50px;
+        position: absolute;
+        top: 25%;
+        left: 42%;
+        transform: translate(-20%, -50%);
+    }
+</style>
