@@ -2,8 +2,8 @@
 import { formatDate } from "../utils";
 import MainLayout from "./MainLayout.astro";
 
-const { title, description, last_updated_date, created_date } = Astro.props
-    .frontmatter as PostProps;
+const { title, description, last_updated_date, created_date } =
+    Astro.props.frontmatter;
 ---
 
 <MainLayout {title} {description}>
