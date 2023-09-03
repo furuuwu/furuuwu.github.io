@@ -19,7 +19,7 @@ category : gaming
 <br>
 <p>The solution is of course <a href="https://en.wikipedia.org/wiki/List_of_gacha_games">gacha games</a></p>
 <p>So, in here i list some suggestions and comment on our options to help you live a in<b>tent</b>ful life</p>
-<p>"But Ricardo", you annoyngly point out, "isn't that because of <a href="https://www.nhm.ac.uk/discover/news/2023/january/increasing-light-pollution-drowning-out-stars.html">light pollution</a>? How is homelessness going to solve the problem?"</p>
+<p>"But Ricardo", you annoyngly point out, "isn't that because of <a href="https://www.lightpollutionmap.info/">light pollution</a>? How is homelessness going to solve the problem?"</p>
 <p>STOP MAKING EXCUSES YOU LIL BITCHES</p>
 
 <br>
@@ -31,7 +31,7 @@ category : gaming
 - Honkai: Star Rail - by far the best way to efficiently get rid of your life savings. The story is usually interesting, they pump enough content without it becoming overwelming because the game is autobattler and takes less time/effort. The powercreep is real but you can do *most* endgame despite as f2p
 - Limbus Company - awesome storywise, the battles are boring (not challenging and no interactivity since the winrate autobate mode always gets the job done...) but there is little to no incentive to spend on the gacha
 - Snowbreak: Containment Zone - the story is ok, the gameplay is enjoyable, story missions are quick and most are easy, the waifu housing is a good idea but feels lifeless
-Genshin Impact - story is interesting, lots of waifus to collect, but gets tiring after a while (there is no way you'll be able to do the daily missions for more than a few months... unless you are masochist or smt). The Spiral Abyss last levels are tough
+- Genshin Impact - story is interesting, lots of waifus to collect, but gets tiring after a while (there is no way you'll be able to do the daily missions for more than a few months... unless you are masochist or smt). The Spiral Abyss last levels are tough
 - CounterSide - the gacha is "generous" but it is a hot mess. Haven't done the pvp much but pve is challenging unless you got everything maxed out. Story is meh imo but tolerable</li>
 - Tower of Fantasy - too soon to tell but i like it
 - Punishing Gray Raven - can't say much but story seems meh and the controls are **hard**
