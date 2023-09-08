@@ -1,8 +1,8 @@
 ---
 layout : "../../layouts/BlogPostLayout.astro"
 title : Summer yey!
-created_date: 2023-08-30
-last_updated_date: 2023-08-30
+created_date: 8/30/2023
+last_updated_date: 8/30/2023
 author: Ric
 image : {
     src: "/images/sun.png",

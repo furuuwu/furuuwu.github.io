@@ -1,8 +1,8 @@
 ---
 layout : "../../layouts/BlogPostLayout.astro"
 title : Gacha!
-created_date: 03/09/2023
-last_updated_date: 03/09/2023
+created_date: 9/03/2023
+last_updated_date: 9/03/2023
 author: Ric
 image : {
     src: "/images/intentful-life.jpg",

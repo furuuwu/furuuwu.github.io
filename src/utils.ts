@@ -1,5 +1,6 @@
 export function formatDate(date: Date) {
-    return new Date(date).toLocaleDateString("en-US", { timeZone: "UTC" });
+    // return new Date(date).toLocaleDateString("en-US", { timeZone: "UTC" });
+    return new Date(date).toLocaleDateString("pt-PT", { timeZone: "UTC" });
 }
 
 export function formatBlogPosts(posts: any,
@@ -41,4 +42,12 @@ export function formatBlogPosts(posts: any,
         return filteredPosts;
     }
 
+}
+
+function convertDateAmericanToEuropean(dateString) {
+    // American Format (MM/D/YY)
+    // to
+    // European format (DD/M/YY)
+    var date = new Date(dateString);
+    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 }
