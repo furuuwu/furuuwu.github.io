@@ -2,7 +2,7 @@
 layout : "../../layouts/BlogPostLayout.astro"
 title : Gacha!
 created_date: 9/03/2023
-last_updated_date: 9/03/2023
+last_updated_date: 12/16/2023
 author: Ric
 image : {
     src: "/images/intentful-life.jpg",
@@ -29,13 +29,19 @@ category : gaming
 <p>for pc (important for me, i rather not use emulators):<p>
 
 - Honkai: Star Rail - by far the best way to efficiently get rid of your life savings. The story is usually interesting, they pump enough content without it becoming overwelming because the game is autobattler and takes less time/effort. The powercreep is real but you can do *most* endgame despite as f2p
-- Limbus Company - awesome storywise, the battles are boring (not challenging and no interactivity since the winrate autobate mode always gets the job done...) but there is little to no incentive to spend on the gacha
-- Snowbreak: Containment Zone - the story is ok, the gameplay is enjoyable, story missions are quick and most are easy, the waifu housing is a good idea but feels lifeless
+- Snowbreak: Containment Zone - the story is ok, the gameplay is enjoyable, story missions are quick and most are easy, the waifu housing is a good idea but feels lifeless. Update: these bastards are phasing out the english voice acting sadly
 - Genshin Impact - story is interesting, lots of waifus to collect, but gets tiring after a while (there is no way you'll be able to do the daily missions for more than a few months... unless you are masochist or smt). The Spiral Abyss last levels are tough
-- CounterSide - the gacha is "generous" but it is a hot mess. Haven't done the pvp much but pve is challenging unless you got everything maxed out. Story is meh imo but tolerable</li>
-- Tower of Fantasy - too soon to tell but i like it
-- Punishing Gray Raven - can't say much but story seems meh and the controls are **hard**
+- CounterSide - OK this is garbage but still doing the events anyway
+- Reverse: 1999 - British waifus. That's the reason to play this, period.
+- Dragonheir - The story is GOOD. The grind is not.
+
+<br>
+<p>stopped (because the day only has 24h and i spend more than half sleeping):</p>
+
+- Limbus Company - awesome storywise, the battles are boring (not challenging and no interactivity since the winrate autobate mode always gets the job done...) but there is little to no incentive to spend on the gacha
 - The Seven Deadly Sins: Grand Cross - story is boring obviously since you already seen it before in the anime, the events are boring, the gamplay itself is boring and the only reason to play this is the cancerous pvp
+- Tower of Fantasy - didn't play it much
+- Punishing Gray Raven - can't say much but story seems meh and the controls are **hard**. update: maybe i just suck at gaming and life in general so i stopped
 
 <br>
 <p>other (think i skip):</p>
@@ -64,14 +70,12 @@ category : gaming
 - Azur Lane
 - Path to Nowhere
 - Blue Archive
-- Reverse: 1999
 - Kingdom Kemono Friends
 - Aether Gazer
 
 <br>
 <p>upcoming:</p>
 
-- Dragonheir - release date September 19
 - Project Mugen - release date 2024
 - Etheria Restart - release date 2024
 - Seven Deadly Sins Origins - release date 2024
