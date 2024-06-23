@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latex Tut</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/post-style.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div> <!-- Header placeholder -->
+    <article class="card">
+        <h2>Simple LaTeX Example</h2>
+        <p>Here is an example of a LaTeX equation:</p>
+        <p>$$E = mc^2$$</p>
+        <p>And here is a more complex one:</p>
+        <p>
+            $$\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
+        </p>
+        <p>Additionally, inline LaTeX can be used, such as \( a^2 + b^2 = c^2 \).</p>
+
+
+        <p>Copied from: https://www.physicsforums.com/help/latexhelp/</p>
+        <h3>Delimiting your LaTeX code</h3>
+        <p>You must put special delimiters at the beginning and end of your LaTeX code, in order for MathJax to
+            recognize it and process it. If you want the equation to appear inline with the surrounding text, put ##
+            before and after it. If you want the equation to stand alone in a separate "paragraph", centered
+            horizontally on the screen as in most textbooks, put $$ before and after it. Here's an example, first with
+            the delimiters disabled so you can see the raw code:</p>
+        <p>Here's an example, first with the delimiters disabled so you can see the raw code:</p>
+        <p>A quadratic equation is of the form <code>\(ax^2 + bx + c = 0\)</code>. To solve for x, use the quadratic
+            formula <code>$$x = \frac {-b \pm \sqrt{b^2 -4ac}} {2a},$$</code> substituting the values of the
+            coefficients a, b and c.</p>
+        <p>And now with the delimiters enabled so as to render the equations:</p>
+        <p>A quadratic equation is of the form \(ax^2 + bx + c = 0\). To solve for x, use the quadratic formula $$x =
+            \frac {-b \pm \sqrt{b^2 -4ac}} {2a},$$ substituting the values of the coefficients a, b and c.</p>
+        <p>Hereafter, I will omit the delimiters in code examples, to save space.</p>
+    </article>
+
+    <script src="../parts/load-header.js"></script>
+</body>
+
+</html>

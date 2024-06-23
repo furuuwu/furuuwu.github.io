@@ -1,0 +1,12 @@
+.card {
+    display: block;
+    /* Override any display property if needed */
+    height: auto;
+    width: auto;
+    -webkit-line-clamp: unset;
+    /* Remove the line clamp */
+    overflow: visible;
+    /* Allow overflow */
+    text-overflow: initial;
+    /* Reset text overflow */
+}

@@ -1,0 +1,14 @@
+### main
+GET http://127.0.0.1:5500/
+
+### posts
+GET http://127.0.0.1:5500/posts/
+
+###
+GET http://127.0.0.1:5500/posts/response-to-bitches-bitching.html
+
+## query params ex1
+GET http://127.0.0.1:5500/?show=blog&hide-header
+
+### query params ex2
+GET http://127.0.0.1:5500/posts/response-to-bitches-bitching.html?hide-header

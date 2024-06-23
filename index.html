@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATGPT BETTER THAN ME</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/stuff/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/stuff/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="/stuff/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon-precomposed" href="/stuff/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="stuff/favicon/android-chrome-512x512.png">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div id="header-placeholder"></div> <!-- Header placeholder -->
+
+    <header>
+        <img src="stuff/anime-girl.jpeg" alt="My Photo" class="profile-pic">
+        <nav>
+            <a href="#" onclick="showPage('presentation')">Presentation</a>
+            <a href="#" onclick="showPage('blog')">Thoughts</a>
+            <a href="#" onclick="showPage('links')">Links</a>
+        </nav>
+    </header>
+
+    <div id="presentation" class="content">
+        <h1>Welcome to My Personal Webpage</h1>
+        <p>Hi, I'm Ricardo, a Unemployed Person. Welcome to my personal webpage where you can learn more about my
+            professional background and read my thoughts.</p>
+        <h2>About Me</h2>
+        <p>Most of what I do is just eating/sleeping/pooping but I like to say I do some critical thinking as well</p>
+        <h2>Experience & goals</h2>
+        <p>Professional experience is not interesting or exciting at all and not worth mentioning. There are some (very
+            few) things i deem would be useful to do before the eternal slumber but still not sure how I'll go about
+            that.</p>
+        <h2>Skills</h2>
+        <p>Asking questions and being confused and other emo stuff.</p>
+        <h2>Contact</h2>
+        <p>Email: random.character.pick@gmail.com</p>
+    </div>
+    <div id="blog" class="content hidden">
+        <h1>This nonsense</h1>
+        <input type="text" id="blogSearch" placeholder="Search for thoughts..">
+
+        <section class="blog-posts">
+            <div class="card-container">
+                <article class="card">
+                    <h2>Cats</h2>
+                    <p>Need to get a cat to cheer me up (cheering slave).</p>
+                    <p>But i can't stand the commitment.</p>
+                    <p>Also, don't have anywhere to live.</p>
+                </article>
+                <article class="card">
+                    <h2>The amount of links sent is absurd</h2>
+                    <p>One more entry to my obvious love-hate relationship with information.</p>
+                    <p>
+                        <a href="https://www.psychologytoday.com/us/blog/hide-and-seek/201411/the-problem-desire">the-problem-desire
+                            by some indian guy (supposedly)</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="links" class="content hidden">
+        <h1>A page for all the links</h1>
+        <p>Everything here is for educational purposes only and if you don't agree it's fair use you can <a
+                href="https://www.youtube.com/watch?v=ZhtFVHLcr5w">click here</a></p>
+        <ul>
+            <li><a href="https://drive.google.com/drive/folders/1d-t-Ykz4Jj6vshrrNfZuL6pGGd57f6X1?usp=sharing">Bio-geo
+                    degree course materials</a></li>
+            <li><a
+                    href="https://docs.google.com/document/d/1lkSInrm2pZN-nzi6HhKwbkmz9hSL5YkfYteFd4Wl304/edit?usp=sharing">Digital
+                    library</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.getElementById('presentation').classList.add('hidden');
+            document.getElementById('blog').classList.add('hidden');
+            document.getElementById('links').classList.add('hidden');
+            document.getElementById(page).classList.remove('hidden');
+        }
+
+        const blogSearch = document.querySelector('#blogSearch');
+        blogSearch.addEventListener('keyup', filterPosts);
+
+        function filterPosts() {
+            let filterValue = blogSearch.value.toLowerCase();
+            const posts = document.querySelectorAll('.card');
+
+            for (let post of posts) {
+                post.innerText.toLowerCase().indexOf(filterValue) > -1
+                    ? post.style.display = ''
+                    : post.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardContainer = document.querySelector('.card-container');
+            let articles = []; // Array to store fetched articles
+
+            // Function to add event listeners to cards
+            function addCardEventListeners() {
+                const cards = document.querySelectorAll('.card');
+                cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        cards.forEach(c => c.classList.add('hidden'));
+                        card.classList.remove('hidden');
+                        card.classList.add('expanded');
+                        if (!card.querySelector('.close-btn')) {
+                            const closeBtn = document.createElement('button');
+                            closeBtn.textContent = 'Close';
+                            closeBtn.className = 'close-btn';
+                            closeBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                cards.forEach(c => {
+                                    c.classList.remove('hidden');
+                                    c.classList.remove('expanded');
+                                });
+                                closeBtn.remove();
+                            });
+                            card.appendChild(closeBtn);
+                        }
+                    });
+                });
+            }
+
+            // Function to fetch articles and populate the card container
+            function fetchArticles() {
+                const articlePages = ['posts/ai-generated.html', 'posts/latex-tut.html', 'posts/cat-pic.html', 'posts/gf-requirements.html', 'posts/response-to-bitches-bitching.html']; // List of article pages
+                Promise.all(articlePages.map(page => fetch(page).then(response => response.text())))
+                    .then(data => {
+                        articles = data; // Store fetched articles in the array
+                        populateCardContainer();
+                    })
+                    .catch(error => console.error('Error fetching articles:', error));
+            }
+
+            // Function to populate the card container with articles
+            function populateCardContainer() {
+                articles.forEach(article => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(article, 'text/html');
+                    const newArticle = doc.querySelector('article');
+                    cardContainer.appendChild(newArticle);
+                });
+                if (window.MathJax) {
+                    MathJax.typeset(); // Re-render MathJax after new content is added
+                } else {
+                    console.error('MathJax is not defined');
+                }
+                addCardEventListeners(); // Add event listeners to the new cards
+            }
+
+            // Initial call to fetch articles
+            fetchArticles();
+        });
+    </script>
+</body>
+
+</html>
