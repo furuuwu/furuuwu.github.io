@@ -89,6 +89,7 @@ input[type="text"] {
 
 .card.expanded {
     height: auto;
+    max-height: none;
     display: grid;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
