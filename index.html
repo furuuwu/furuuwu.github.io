@@ -134,7 +134,14 @@
 
             // Function to fetch articles and populate the card container
             function fetchArticles() {
-                const articlePages = ['posts/ai-generated.html', 'posts/latex-tut.html', 'posts/cat-pic.html', 'posts/gf-requirements.html', 'posts/response-to-bitches-bitching.html']; // List of article pages
+                const articlePages = [
+                    'posts/ai-generated.html',
+                    'posts/latex-tut.html',
+                    'posts/gf-requirements.html',
+                    'posts/response-to-bitches-bitching.html',
+                    'posts/cool-vids.html',
+                    'posts/my-links.html'
+                ]; // List of article pages
                 Promise.all(articlePages.map(page => fetch(page).then(response => response.text())))
                     .then(data => {
                         articles = data; // Store fetched articles in the array

@@ -56,7 +56,6 @@ input[type="text"] {
 .blog-posts {
     display: grid;
     padding: 2.5rem 2rem;
-    /*max-width: 1000px;*/
     margin-left: 0;
 }
 
@@ -68,25 +67,18 @@ input[type="text"] {
 }
 
 .card {
-    /*
-    position: relative;
-    display: grid;
-    align-content: space-between;
-    height: 400px;
-    overflow: hidden;
-    */
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*height: 400px;*/
-    text-overflow: clip;
+    max-height: 400px;
+    /* Set a maximum height */
     overflow: hidden;
+    text-overflow: clip;
     display: -webkit-box;
     -webkit-line-clamp: 11;
-    /* Change this value to control the number of lines */
+    /* Adjust to control the number of lines */
     -webkit-box-orient: vertical;
-
     background-color: #2d2d2d;
     padding: 1rem;
     border-radius: 8px;
